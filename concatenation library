@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+void main()
+{
+  char lib[10][30],libt[10][30],lcmp;
+	int i, n;
+  printf("Enter number of word to add in Library\n");
+	scanf("%d", &n);
+  printf("Enter Word one by one: \n");
+  for(i=0; i< n ; i++) 
+  {
+		scanf("%s",lib[i]);
+    libt[i]=lib[i];
+	}
+  for(i=0; i< n ; i++) 
+  {
+     for(j=1; j< n ; j++)
+     {
+          strcat(lib[i],lib[j]);
+          lcmp=lib[i];
+          for(i=0; i< n ; i++) 
+          {
+              if (strcmp(lcmp,libt[i]) == 0)
+              {
+                printf("concatenated word %s is present in the Libraray.\n",lcmp);
+              }
+          }
+          lib[i]=libt[i];
+       }
+   }
+    for(i=n; i>0 ; i--) 
+  {
+     for(j=n-1; j>0 ; j--)
+     {
+          strcat(lib[i],lib[j]);
+          lcmp=lib[i];
+          for(i=0; i< n ; i++) 
+          {
+              if (strcmp(lcmp,libt[i]) == 0)
+              {
+                printf("concatenated word %s is present in the Libraray.\n",lcmp);
+              }
+          }
+          lib[i]=libt[i];
+       }
+   }
+}
+  
+  
